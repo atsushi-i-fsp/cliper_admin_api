@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: cliper_admin_production
+  database: cliper_admin
   username: atsushi
   password: <%= ENV['CLIPER_ADMIN_DATABASE_PASSWORD'] %>
