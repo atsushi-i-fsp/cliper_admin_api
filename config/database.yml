@@ -13,20 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
+  username: atsushi
   password:
   host: localhost
 
 development:
   <<: *default
-  database: CLIPER_ADMIN_development
+  database: cliper_admin_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: CLIPER_ADMIN_test
+  database: cliper_admin_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: CLIPER_ADMIN_production
-  username: CLIPER_ADMIN
+  database: cliper_admin_production
+  username: atsushi
   password: <%= ENV['CLIPER_ADMIN_DATABASE_PASSWORD'] %>
