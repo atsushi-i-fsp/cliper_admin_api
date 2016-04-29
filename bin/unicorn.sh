@@ -3,6 +3,7 @@
 set -e
 
 TIMEOUT=60
+RAILS_ROOT=/var/www/CLIPER_ADMIN_API
 APP_ROOT=${RAILS_ROOT}
 PID=/var/run/unicorn.pid
 RAILS_ENV=production

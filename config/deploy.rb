@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.1'
 
-set :application, 'my_app_name'
+set :application, 'CLIPER_ADMIN_API'
 set :repo_url, 'git@example.com:me/my_repo.git'
 
 # Default branch is :master
