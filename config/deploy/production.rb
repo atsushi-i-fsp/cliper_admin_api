@@ -49,8 +49,8 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server 'http://ec2-52-192-165-187.ap-northeast-1.compute.amazonaws.com',
-  user: 'ec2-user',
+server 'ec2-52-192-165-187.ap-northeast-1.compute.amazonaws.com',
+  user: 'ubuntu',
   roles: %w{app},
   ssh_options: {
 #     user: 'user_name', # overrides user setting above
