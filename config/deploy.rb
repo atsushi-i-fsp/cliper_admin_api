@@ -32,6 +32,12 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, {
+  CLIPER_ADMIN_DATABASE_URL: ENV['CLIPER_ADMIN_DATABASE_URL'],
+  CLIPER_ADMIN_DATABASE_PASSWORD: ENV['CLIPER_ADMIN_DATABASE_PASSWORD']
+  CLIPER_ADMIN_SECRET_KEY_BASE: ENV['CLIPER_ADMIN_SECRET_KEY_BASE']
+}
+
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
