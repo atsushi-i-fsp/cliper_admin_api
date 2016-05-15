@@ -10,11 +10,24 @@ class BookMarksController < ApplicationController
   end
 
   def create
-    @book_marks = BookMark.new(book_mark_create_params)
+    if params[:method] == 'DELETE'
+      @book_mark = BookMark.find(params[:id])
+      @book_mark.destroy
+      respond_to do |format|
+        format.json {
+          return render json: {}
+        }
+      end
+    else
+      @book_mark = BookMark.new(book_mark_create_params)
+      @book_mark.url = 'test'
 
-    respond_to do |format|
-      @book_mark.save
-      format.json {}
+      respond_to do |format|
+        @book_mark.save
+        format.json {
+          return render json: { id: @book_mark.id }
+        }
+      end
     end
   end
 
@@ -38,5 +51,9 @@ class BookMarksController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def book_mark_params
     params.fetch(:book_mark, {})
+  end
+
+  def book_mark_create_params
+    params.require(:book_mark).permit(:title, :body)
   end
 end
